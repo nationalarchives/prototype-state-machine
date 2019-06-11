@@ -1,0 +1,14 @@
+FROM ubuntu
+RUN apt-get update \
+            && apt-get install -y clamav python3-pip \
+            && freshclam \
+            && pip3 install awscli
+WORKDIR /viruscheck
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
+ENV AWS_DEFAULT_REGION eu-west-2
+CMD aws s3 cp s3://tdr-files/$FILE_NAME . && clamscan .
+
+

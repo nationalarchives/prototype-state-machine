@@ -1,0 +1,7 @@
+schemaVersion: 2.0.0
+
+commandTests:
+  - name: "clamav installation"
+    command: "which"
+    args: ["clamscan"]
+    expectedOutput: ["/usr/bin/clamscan\n"]

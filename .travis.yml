@@ -1,0 +1,12 @@
+language: minimal
+
+services:
+  - docker
+
+install:
+  - docker pull 247222723249.dkr.ecr.eu-west-2.amazonaws.com/clamav:latest
+  - curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 && chmod +x container-structure-test-linux-amd64 && sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+
+script:
+  - container-structure-test test --image 247222723249.dkr.ecr.eu-west-2.amazonaws.com/clamav:latest --config virus/config.yml
+
