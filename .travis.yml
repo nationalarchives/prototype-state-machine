@@ -10,8 +10,6 @@ install:
 script:
   - bash run_tests.sh
 
-
-
 before_deploy:
   - pip install awscli
   - aws ecr get-login --no-include-email | bash
