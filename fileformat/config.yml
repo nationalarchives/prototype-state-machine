@@ -1,0 +1,12 @@
+schemaVersion: 2.0.0
+
+commandTests:
+  - name: "siegfried installation"
+    command: "which"
+    args: ["sf"]
+    expectedOutput: ["/usr/bin/sf\n"]
+
+  - name: "aws cli installation"
+    command: "aws"
+    args: ["--version"]
+    expectedOutput: ["aws-cli/1.16.173 Python/3.6.7 Linux/3.10.0-957.12.1.el7.x86_64 botocore/1.12.1"]
