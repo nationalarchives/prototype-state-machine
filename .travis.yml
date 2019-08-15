@@ -16,6 +16,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: bash deploy_images.sh
+  script: bash deploy_images.sh dev
   on:
     branch: tkAddS3BucketAsConfig
