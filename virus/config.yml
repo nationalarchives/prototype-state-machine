@@ -11,7 +11,7 @@ commandTests:
     args: ["--version"]
     exitCode: 0
 
-#metadataTest:
-#  env:
-#    - key: AWS_DEFAULT_REGION
-#      value: "eu-west-2"
+metadataTest:
+  env:
+    - key: AWS_DEFAULT_REGION
+      value: "eu-west-2"

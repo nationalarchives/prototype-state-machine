@@ -11,9 +11,7 @@ commandTests:
     args: ["--version"]
     exitCode: 0
 
-#metadataTest:
-#  env:
-#    - key: AWS_DEFAULT_REGION
-#      value: "eu-west-2"
-#    - key: S3_UPLOAD_BUCKET
-#      value: "tdr-upload-files-dev"
+metadataTest:
+  env:
+    - key: AWS_DEFAULT_REGION
+      value: "eu-west-2"
