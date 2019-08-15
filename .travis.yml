@@ -18,4 +18,4 @@ deploy:
   provider: script
   script: bash deploy_images.sh
   on:
-    branch: master
+    branch: tkAddS3BucketAsConfig
