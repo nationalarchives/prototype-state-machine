@@ -1,4 +1,4 @@
-aws s3 cp s3://tdr-upload-files-dev/$FILE_NAME .
+aws s3 cp s3://$S3_UPLOAD_BUCKET/$FILE_NAME .
 STATUS=`clamscan | head -n 1 | awk -F': ' '{print $2}'`
 VIRUS_FOUND=false
 if [[ $STATUS != "OK" ]]; then
