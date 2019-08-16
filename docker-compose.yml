@@ -1,7 +1,7 @@
 version: "3"
 services:
   clamav:
-    image: nationalarchives/tdr-virus-check
+    image: nationalarchives/tdr-virus-check:dev
     build:
       context: ./virus
       args:
@@ -10,7 +10,7 @@ services:
         - AWS_DEFAULT_REGION
     container_name: clamav
   siegfried:
-    image: nationalarchives/tdr-file-format-check
+    image: nationalarchives/tdr-file-format-check:dev
     build:
       context: ./fileformat
       args:
@@ -19,7 +19,7 @@ services:
         - AWS_DEFAULT_REGION
     container_name: siegfried
   checksum:
-    image: nationalarchives/tdr-checksum-check
+    image: nationalarchives/tdr-checksum-check:dev
     build:
       context: ./checksum
       args:
