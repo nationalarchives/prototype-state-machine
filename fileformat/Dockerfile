@@ -7,8 +7,8 @@ RUN apt-get update \
                 && apt-get install -y siegfried \
                 && pip3 install awscli
 WORKDIR fileformat
-CMD aws s3 cp s3://tdr-files/$FILE_NAME . \
-                && sf -json . > tmp \
-                && aws stepfunctions send-task-success --task-token $TASK_TOKEN_ENV_VARIABLE --task-output "$(cat tmp)"
+COPY process_file.py /
+CMD aws s3 sync s3://tdr-upload-files-dev/$CONSIGNMENT_ID . && \
+				find . -type f -exec python3 /process_file.py {} \;
 
 
