@@ -1,26 +1,17 @@
 version: "3"
 services:
   clamav:
-    image: 247222723249.dkr.ecr.eu-west-2.amazonaws.com/clamav
+    image: "nationalarchives/tdr-virus-check:dev"
     build:
       context: ./virus
-      args:
-        - AWS_ACCESS_KEY_ID
-        - AWS_SECRET_ACCESS_KEY
     container_name: clamav
   siegfried:
-    image: 247222723249.dkr.ecr.eu-west-2.amazonaws.com/siegfried
+    image: "nationalarchives/tdr-file-format-check:dev"
     build:
       context: ./fileformat
-      args:
-        - AWS_ACCESS_KEY_ID
-        - AWS_SECRET_ACCESS_KEY
     container_name: siegfried
   checksum:
-    image: 247222723249.dkr.ecr.eu-west-2.amazonaws.com/checksum
+    image: "nationalarchives/tdr-checksum-check:dev"
     build:
       context: ./checksum
-      args:
-        - AWS_ACCESS_KEY_ID
-        - AWS_SECRET_ACCESS_KEY
     container_name: checksum

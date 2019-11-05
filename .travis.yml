@@ -12,7 +12,7 @@ script:
 
 before_deploy:
   - pip install awscli
-  - aws ecr get-login --no-include-email | bash
+  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 
 deploy:
   provider: script

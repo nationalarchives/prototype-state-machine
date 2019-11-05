@@ -1,3 +1,4 @@
-docker push 247222723249.dkr.ecr.eu-west-2.amazonaws.com/checksum
-docker push 247222723249.dkr.ecr.eu-west-2.amazonaws.com/siegfried
-docker push 247222723249.dkr.ecr.eu-west-2.amazonaws.com/clamav
+docker push nationalarchives/tdr-virus-check:dev
+docker push nationalarchives/tdr-file-format-check:dev
+docker push nationalarchives/tdr-checksum-check:dev
+
